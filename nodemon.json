@@ -1,0 +1,12 @@
+{
+    "watch": ["."],
+    "ext": "go",
+    "exec": "go run main.go",
+    "ignore": ["*.git", "temp"],
+    "legacy-watch": true,
+    "restartable": "rs",
+    "delay": "1000",
+    "events": {
+        "restart": "cmd /c echo App restarted due to changes && timeout /nobreak /t 1 >nul && echo."
+    }
+}

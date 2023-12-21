@@ -1,0 +1,8 @@
+*.db
+*.txt
+temp/*.mp4
+temp/*.jpg
+temp/*.png
+temp/*.webp
+go.sum
+.env
