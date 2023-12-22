@@ -136,7 +136,7 @@ func NewSmsg(mess *events.Message, sock *Event, jdbot ...bool) *IMessage {
 				QuotedMessage: mess.Message,
 			}, opts...)
 		},
-		React: func(react string, opts ...whatsmeow.SendRequestExtra) (whatsmeow.SendResponse, error) {
+		React: func(react string) (whatsmeow.SendResponse, error) {
 			return sock.WA.SendMessage(context.Background(), mess.Info.Chat, sock.WA.BuildReaction(mess.Info.Chat, mess.Info.Sender, mess.Info.ID, react))
 		},		
 	}

@@ -50,5 +50,5 @@ type IMessage struct {
 	ID              *waProto.ContextInfo
 	QuotedMsg       *waProto.ContextInfo
 	Reply           func(text string, opts ...whatsmeow.SendRequestExtra) (whatsmeow.SendResponse, error)
-	React           func(text string, opts ...whatsmeow.SendRequestExtra) (whatsmeow.SendResponse, error)
+	React           func(text string) (whatsmeow.SendResponse, error)
 }
