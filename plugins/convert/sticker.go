@@ -31,7 +31,7 @@ func init() {
 				KeepScale: true,
 				Removebg:  "false",
 				Circle: func() bool {
-					if m.Querry == "-c" {
+					if m.Query == "-c" {
 						return true
 					} else {
 						return false

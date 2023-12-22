@@ -11,10 +11,10 @@ func init() {
 		As:       []string{"midesign"},
 		Tags:     "ai",
 		IsPrefix: true,
-		IsQuerry: true,
+		IsQuery:  true,
 		IsWaitt:  true,
 		Exec: func(client *lib.Event, m *lib.IMessage) {
-			data, err := api.MicrosoftDesigner(m.Querry)
+			data, err := api.MicrosoftDesigner(m.Query)
 			if err != nil {
 				m.Reply(err.Error())
 				return
@@ -25,7 +25,7 @@ func init() {
 				m.Reply(err.Error())
 				return
 			}
-			client.SendImage(m.From, buffer, m.Querry, m.ID)
+			client.SendImage(m.From, buffer, m.Query, m.ID)
 		},
 	})
 }

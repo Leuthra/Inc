@@ -18,7 +18,7 @@ type ICommand struct {
 	IsPrefix    bool
 	IsOwner     bool
 	IsMedia     bool
-	IsQuerry    bool
+	IsQuery     bool
 	IsGroup     bool
 	IsAdmin     bool
 	IsBotAdmin  bool
@@ -36,7 +36,7 @@ type IMessage struct {
 	PushName        string
 	IsOwner         bool
 	IsGroup         bool
-	Querry          string
+	Query           string
 	Body            string
 	Command         string
 	IsImage         bool

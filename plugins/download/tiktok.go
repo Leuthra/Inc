@@ -11,10 +11,10 @@ func init() {
 		As:       []string{"tiktok"},
 		Tags:     "downloader",
 		IsPrefix: true,
-		IsQuerry: true,
+		IsQuery:  true,
 		IsWaitt:  true,
 		Exec: func(client *lib.Event, m *lib.IMessage) {
-			url, err := api.GetTiktokVideo(m.Querry)
+			url, err := api.GetTiktokVideo(m.Query)
 			if err != nil {
 				m.Reply(err.Error())
 				return

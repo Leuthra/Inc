@@ -23,14 +23,14 @@ func init() {
 		As:       []string{"ytmp4", "ytmp3", "play"},
 		Tags:     "downloader",
 		IsPrefix: true,
-		IsQuerry: true,
+		IsQuery:  true,
 		IsWaitt:  true,
 		Exec: func(client *lib.Event, m *lib.IMessage) {
 			var url string
-			if api.IsYoutubeURL(m.Querry) {
-				url = m.Querry
+			if api.IsYoutubeURL(m.Query) {
+				url = m.Query
 			} else {
-				ser, _ := searchtube.Search(m.Querry, 10)
+				ser, _ := searchtube.Search(m.Query, 10)
 				if len(ser) == 0 {
 					m.Reply("Not Found")
 					return

@@ -67,7 +67,7 @@ func NewSmsg(mess *events.Message, sock *Event, jdbot ...bool) *IMessage {
 		IsOwner:     isOwner,
 		IsBot:       mess.Info.IsFromMe,
 		IsGroup:     mess.Info.IsGroup,
-		Querry:      strings.Join(strings.Split(command, " ")[1:], ` `),
+		Query:       strings.Join(strings.Split(command, " ")[1:], ` `),
 		Body:        command,
 		Command:     strings.ToLower(strings.Split(command, " ")[0]),
 		Media:       media,

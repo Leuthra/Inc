@@ -17,7 +17,7 @@ func init() {
 			vm := otto.New()
 			vm.Set("M", m)
 
-			h, err := vm.Run(m.Querry)
+			h, err := vm.Run(m.Query)
 			if err != nil {
 				m.Reply(err.Error())
 				return
@@ -25,7 +25,7 @@ func init() {
 
 			if h.IsObject() {
 				var data interface{}
-				h, _ := vm.Run("JSON.stringify(" + m.Querry + ")")
+				h, _ := vm.Run("JSON.stringify(" + m.Query + ")")
 				json.Unmarshal([]byte(h.String()), &data)
 				pe, _ := json.MarshalIndent(data, "", "  ")
 				m.Reply(string(pe))

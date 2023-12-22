@@ -55,7 +55,7 @@ func Get(c *Event, m *IMessage) {
 				continue
 			}
 
-			if cmd.IsQuerry && m.Querry == "" {
+			if cmd.IsQuery && m.Query == "" {
 				m.Reply("Please use command with added query!")
 				continue
 			}

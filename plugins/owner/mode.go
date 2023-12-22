@@ -14,7 +14,7 @@ func init() {
 		IsPrefix: true,
 		IsOwner:  true,
 		Exec: func(client *lib.Event, m *lib.IMessage) {
-			if m.Querry == "public" {
+			if m.Query == "public" {
 				helpers.Public = true
 				m.Reply("Public Mode: " + strconv.FormatBool(helpers.Public))
 			} else {

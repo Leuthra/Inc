@@ -12,10 +12,10 @@ func init() {
 		Tags:     "group",
 		IsPrefix: true,
 		IsOwner:  true,
-		IsQuerry: true,
+		IsQuery:  true,
 		IsWaitt:  true,
 		Exec: func(client *lib.Event, m *lib.IMessage) {
-			gid, err := client.WA.JoinGroupWithLink(m.Querry)
+			gid, err := client.WA.JoinGroupWithLink(m.Query)
 			if err != nil {
 				m.Reply("can't join the group.")
 			} else {

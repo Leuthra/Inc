@@ -51,7 +51,7 @@ func menu(client *lib.Event, m *lib.IMessage) {
 	sort.Sort(keys)
 
 	for _, key := range keys {
-		str += fmt.Sprintf("「 *%s MENU* 」\n", strings.ToUpper(key))
+		str += fmt.Sprintf("「 %s MENU 」\n", strings.ToUpper(key))
 		for _, e := range tags[key] {
 			var prefix string
 			if e.IsPrefix {

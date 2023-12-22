@@ -13,21 +13,21 @@ func init() {
 		As:       []string{"ci"},
 		Tags:     "info",
 		IsPrefix: true,
-		IsQuerry: true,
+		IsQuery:  true,
 		Exec: func(client *lib.Event, m *lib.IMessage) {
 			pattern := regexp.MustCompile(`https?://whatsapp.com/channel/`)
-			if !pattern.MatchString(m.Querry) {
+			if !pattern.MatchString(m.Query) {
 				m.Reply("Url Invalid")
 				return
 			}
 
-			key, err := client.WA.GetNewsletterInfoWithInvite(strings.Split(m.Querry, "/")[4])
+			key, err := client.WA.GetNewsletterInfoWithInvite(strings.Split(m.Query, "/")[4])
 			if err != nil {
 				m.Reply("i don't know")
 				return
 			}
 
-			m.Reply(fmt.Sprintf("*Channel Information*\n*Link:* %s\n*ID:* %s\n*Name:* %v\n*Followers:* %v\n\n*Description:* %v\n*Create At:* %v", m.Querry, key.ID, key.ThreadMeta.Name.Text, key.ThreadMeta.SubscriberCount, key.ThreadMeta.Description.Text, key.ThreadMeta.CreationTime))
+			m.Reply(fmt.Sprintf("*Channel Information*\n*Link:* %s\n*ID:* %s\n*Name:* %v\n*Followers:* %v\n\n*Description:* %v\n*Create At:* %v", m.Query, key.ID, key.ThreadMeta.Name.Text, key.ThreadMeta.SubscriberCount, key.ThreadMeta.Description.Text, key.ThreadMeta.CreationTime))
 		},
 	})
 }

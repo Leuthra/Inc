@@ -9,12 +9,12 @@ func init() {
 		Tags:       "group",
 		IsPrefix:   true,
 		IsWaitt:    true,
-		IsQuerry:   true,
+		IsQuery:    true,
 		IsAdmin:    true,
 		IsGroup:    true,
 		IsBotAdmin: true,
 		Exec: func(client *lib.Event, m *lib.IMessage) {
-			err := client.WA.SetGroupTopic(m.From, "", "", m.Querry)
+			err := client.WA.SetGroupTopic(m.From, "", "", m.Query)
 			if err != nil {
 				m.Reply("Failed to change the group description")
 				return

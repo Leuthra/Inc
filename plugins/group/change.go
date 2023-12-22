@@ -39,8 +39,8 @@ func init() {
 					jid, _ := types.ParseJID(*m.QuotedMsg.Participant)
 					ujid = append(ujid, jid)
 				}
-			} else if len(m.Querry) > 0 {
-				ajid := strings.Split(strings.Trim(m.Querry, " "), ",")
+			} else if len(m.Query) > 0 {
+				ajid := strings.Split(strings.Trim(m.Query, " "), ",")
 				ujid = make([]types.JID, len(ajid))
 				for i, a := range ajid {
 					num, err := phonenumbers.Parse(a, "ID")

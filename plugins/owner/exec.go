@@ -14,7 +14,7 @@ func init() {
 		IsPrefix: false,
 		IsOwner:  true,
 		Exec: func(client *lib.Event, m *lib.IMessage) {
-			out, err := exec.Command("bash", "-c", m.Querry).Output()
+			out, err := exec.Command("bash", "-c", m.Query).Output()
 			if err != nil {
 				m.Reply(fmt.Sprintf("%v", err))
 				return
