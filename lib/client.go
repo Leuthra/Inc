@@ -28,6 +28,14 @@ func NewClient(client *whatsmeow.Client) *Event {
 	}
 }
 
+func(client *Event) React(from types.JID, react string, opts *waProto.ContextInfo) {
+    _,
+    err := client.WA.SendMessage(context.Background(), from, client.WA.BuildReaction(from, from, *opts.StanzaId, react))
+    if err != nil {
+        return
+    }
+}
+
 func (client *Event) SendText(from types.JID, txt string, opts *waProto.ContextInfo, optn ...whatsmeow.SendRequestExtra) (whatsmeow.SendResponse, error) {
 	ok, er := client.WA.SendMessage(context.Background(), from, &waProto.Message{
 		ExtendedTextMessage: &waProto.ExtendedTextMessage{
