@@ -29,6 +29,7 @@ type ICommand struct {
 }
 
 type IMessage struct {
+	Info			types.MessageInfo
 	From            types.JID
 	IsBot           bool
 	Sender          types.JID

@@ -13,9 +13,12 @@ func init() {
 		Tags:     "info",
 		IsPrefix: true,
 		Exec: func(client *lib.Event, m *lib.IMessage) {
-			start := time.Now()
-			fmt.Println("pong")
-			m.Reply("Speed: " + time.Since(start).String())
+			now := time.Now()
+				mdate := time.Unix(m.Info.Timestamp.Unix(), 0)
+				mtime := now.Sub(mdate)
+				ms := mtime.Seconds()
+				txt := fmt.Sprintf("%.3f seconds", ms)
+				m.Reply(txt)
 		},
 	})
 }

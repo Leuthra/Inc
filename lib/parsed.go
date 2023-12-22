@@ -61,6 +61,7 @@ func NewSmsg(mess *events.Message, sock *Event, jdbot ...bool) *IMessage {
 	}
 
 	return &IMessage{
+		Info:		 mess.Info,
 		From:        mess.Info.Chat,
 		Sender:      mess.Info.Sender,
 		PushName:    mess.Info.PushName,
